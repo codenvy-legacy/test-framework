@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+~ Copyright 2014 Codenvy, S.A.
+~
+~ Licensed under the Apache License, Version 2.0 (the "License");
+~ you may not use this file except in compliance with the License.
+~ You may obtain a copy of the License at
+~
+~      http://www.apache.org/licenses/LICENSE-2.0
+~
+~ Unless required by applicable law or agreed to in writing, software
+~ distributed under the License is distributed on an "AS IS" BASIS,
+~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~ See the License for the specific language governing permissions and
+~ limitations under the License.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <artifactId>maven-depmgt-pom</artifactId>
+        <groupId>com.codenvy</groupId>
+        <version>1.7.5-SNAPSHOT</version>
+    </parent>
+    <groupId>com.codenvy.test-framework</groupId>
+    <artifactId>codenvy-test-framework</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>Codenvy Test Framework</name>
+    <scm>
+        <connection>scm:git:git@github.com:codenvy/test-framework.git</connection>
+        <developerConnection>scm:git:git@github.com:codenvy/test-framework.git</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://fisheye.codenvycorp.com/browse/test-framework</url>
+    </scm>
+    <properties>
+        <maven.model.version>3.0.5</maven.model.version>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>com.googlecode.grep4j</groupId>
+            <artifactId>grep4j</artifactId>
+            <version>1.8.7</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.concordion</groupId>
+            <artifactId>concordion</artifactId>
+            <version>${org.concordion.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.concordion</groupId>
+            <artifactId>concordion-extensions</artifactId>
+            <version>${org.concordion.ext.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jboss.arquillian.extension</groupId>
+            <artifactId>arquillian-phantom-driver</artifactId>
+            <version>${org.jboss.arquillian.version}</version>
+        </dependency>
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>codenvy-public-repo</id>
+            <name>codenvy public</name>
+            <url>https://maven.codenvycorp.com/content/groups/public/</url>
+        </repository>
+    </repositories>
+</project>
