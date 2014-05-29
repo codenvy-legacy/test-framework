@@ -23,13 +23,13 @@
     </parent>
     <groupId>com.codenvy.test-framework</groupId>
     <artifactId>codenvy-test-framework</artifactId>
-    <version>0.1.0-SNAPSHOT</version>
+    <version>0.1.0</version>
     <packaging>jar</packaging>
     <name>Codenvy Test Framework</name>
     <scm>
         <connection>scm:git:git@github.com:codenvy/test-framework.git</connection>
         <developerConnection>scm:git:git@github.com:codenvy/test-framework.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>0.2.0-SNAPSHOT</tag>
         <url>https://fisheye.codenvycorp.com/browse/test-framework</url>
     </scm>
     <properties>
