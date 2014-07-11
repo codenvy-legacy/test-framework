@@ -10,6 +10,8 @@
  *******************************************************************************/
 package com.codenvy.test.framework.concordion;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.concordion.ext.ScreenshotTaker;
 import org.concordion.ext.ScreenshotUnavailableException;
 import org.openqa.selenium.JavascriptExecutor;
@@ -23,6 +25,8 @@ import java.io.OutputStream;
 
 public class SeleniumScreenshotTaker implements ScreenshotTaker {
 
+    public static final Log log = LogFactory.getLog(SeleniumScreenshotTaker.class);
+
     private final WebDriver driver;
 
     public SeleniumScreenshotTaker(WebDriver driver) {
@@ -33,6 +37,7 @@ public class SeleniumScreenshotTaker implements ScreenshotTaker {
         this.driver = baseDriver;
     }
 
+    @Override
     public int writeScreenshotTo(OutputStream outputStream) throws IOException {
         byte[] screenshot;
         try {
@@ -41,9 +46,15 @@ public class SeleniumScreenshotTaker implements ScreenshotTaker {
             throw new ScreenshotUnavailableException("driver does not implement TakesScreenshot");
         }
         outputStream.write(screenshot);
-        return ((Long)((JavascriptExecutor)driver).executeScript("return document.body.clientWidth")).intValue() + 2; // window.outerWidth"));
+        try {
+            return ((Long)((JavascriptExecutor)driver).executeScript("return document.body.clientWidth")).intValue() + 2; // window.outerWidth"));
+        } catch (Exception e) {
+            log.warn("Failed taking screenshot", e);
+        }
+        return 0;
     }
 
+    @Override
     public String getFileExtension() {
         return "png";
     }
