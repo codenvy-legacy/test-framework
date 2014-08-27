@@ -9,6 +9,7 @@
  *   Codenvy, S.A. - initial API and implementation
  *******************************************************************************/
 package com.codenvy.test.framework.concordion;
+
 import org.concordion.api.Resource;
 import org.concordion.api.extension.ConcordionExtender;
 import org.concordion.api.extension.ConcordionExtension;
@@ -18,6 +19,7 @@ import org.concordion.api.extension.ConcordionExtension;
  */
 public class CodenvyConcordionResourceExtension implements ConcordionExtension {
 
+    @Override
     public void addTo(ConcordionExtender concordionExtender) {
         concordionExtender.withLinkedJavaScript("/com/codenvy/test/framework/scripts/jquery-1.9.0.min.js",
                                                 new Resource("/scripts/jquery-1.9.0.min.js"));
@@ -27,7 +29,14 @@ public class CodenvyConcordionResourceExtension implements ConcordionExtension {
                                                 new Resource("/scripts/Markdown.Converter.js"));
 
         // bootstrap
-        concordionExtender.withLinkedJavaScript("/com/codenvy/test/framework/bootstrap/js/bootstrap.min.js", new Resource("/bootstrap/js/bootstrap.min.js"));
-        concordionExtender.withLinkedCSS("/com/codenvy/test/framework/bootstrap/css/bootstrap.min.css", new Resource("/bootstrap/css/bootstrap.min.css"));
+        concordionExtender.withLinkedJavaScript("/com/codenvy/test/framework/bootstrap/js/bootstrap.min.js",
+                                                new Resource("/bootstrap/js/bootstrap.min.js"));
+        concordionExtender.withLinkedCSS("/com/codenvy/test/framework/bootstrap/css/bootstrap.min.css",
+                                         new Resource("/bootstrap/css/bootstrap.min.css"));
+
+        // adding the link to the log files if any
+        CodenvyConcordionLogFileEmbedderListener listener = new CodenvyConcordionLogFileEmbedderListener();
+        concordionExtender.withSpecificationProcessingListener(listener);
+        concordionExtender.withBuildListener(listener);
     }
 }
