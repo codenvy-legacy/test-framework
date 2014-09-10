@@ -28,15 +28,15 @@ public class IDEMainPage {
     }
 
     public WebElement getTab(String tabName) {
-        return new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id("gwt-debug-tabButton-" + tabName)));
+        return new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.id("gwt-debug-tabButton-" + tabName)));
     }
 
     public WebElement getMainMenuItem(String mainMenuItemName) {
-        return new WebDriverWait(driver, 10).until(ExpectedConditions.presenceOfElementLocated(By.id("gwt-debug-MainMenu/"
+        return new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.id("gwt-debug-MainMenu/"
                                                                                                      + mainMenuItemName)));
     }
 
     public WebElement getMainMenuAction(String menuPath) {
-        return new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(By.id("topmenu/" + menuPath)));
+        return new WebDriverWait(driver, 30).until(ExpectedConditions.elementToBeClickable(By.id("topmenu/" + menuPath)));
     }
 }
