@@ -33,7 +33,7 @@ public class IDEMainPage {
 
     public WebElement getMainMenuItem(String mainMenuItemName) {
         return new WebDriverWait(driver, 30).until(ExpectedConditions.presenceOfElementLocated(By.id("gwt-debug-MainMenu/"
-                                                                                                     + mainMenuItemName)));
+                                                                                                     + mainMenuItemName + "-true")));
     }
 
     public WebElement getMainMenuAction(String menuPath) {
