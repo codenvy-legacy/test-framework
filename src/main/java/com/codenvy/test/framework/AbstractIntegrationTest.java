@@ -14,6 +14,7 @@ import static org.grep4j.core.Grep4j.constantExpression;
 import static org.grep4j.core.Grep4j.grep;
 import static org.grep4j.core.fluent.Dictionary.on;
 
+import java.io.File;
 import java.util.logging.Logger;
 
 import org.concordion.api.extension.Extension;
@@ -74,9 +75,14 @@ public class AbstractIntegrationTest {
     public String serverIsStarted(String logFileLocation) {
         // get server location
         String serverLocation = System.getProperty("codenvy.ide.path");
+        String logFileAbsolutePath = serverLocation + logFileLocation;
+
+        if (!new File(logFileAbsolutePath).exists()) {
+            return "is not started, file " + logFileAbsolutePath + " couldn't be found";
+        }
         final Profile profile = ProfileBuilder.newBuilder()
                                               .name("Local server log")
-                                              .filePath(serverLocation + logFileLocation)
+                                              .filePath(logFileAbsolutePath)
                                               .onLocalhost()
                                               .build();
         if (new WebDriverWait(driver, 200).until(new ExpectedCondition<Boolean>() {
