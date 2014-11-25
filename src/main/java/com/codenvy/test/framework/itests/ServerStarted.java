@@ -34,7 +34,7 @@ public class ServerStarted extends AbstractIntegrationTest {
     }
 
     public String displayFileMenu() {
-        return mainPage.getMainMenuItem("FileGroup").getText();
+        return mainPage.getMainMenuItem("fileGroup").getText();
     }
 
 }
