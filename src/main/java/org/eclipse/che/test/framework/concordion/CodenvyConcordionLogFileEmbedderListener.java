@@ -8,7 +8,7 @@
  * Contributors:
  *   Codenvy, S.A. - initial API and implementation
  *******************************************************************************/
-package com.codenvy.test.framework.concordion;
+package org.eclipse.che.test.framework.concordion;
 
 import java.io.File;
 import java.io.IOException;

@@ -8,7 +8,7 @@
  * Contributors:
  *   Codenvy, S.A. - initial API and implementation
  *******************************************************************************/
-package com.codenvy.test.framework;
+package org.eclipse.che.test.framework;
 
 import static org.grep4j.core.Grep4j.constantExpression;
 import static org.grep4j.core.Grep4j.grep;
@@ -37,7 +37,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.codenvy.test.framework.concordion.CodenvyConcordionExtension;
+import org.eclipse.che.test.framework.concordion.CodenvyConcordionExtension;
 
 
 /**

@@ -8,7 +8,7 @@
  * Contributors:
  *   Codenvy, S.A. - initial API and implementation
  *******************************************************************************/
-package com.codenvy.test.framework.selenium.pages;
+package org.eclipse.che.test.framework.selenium.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

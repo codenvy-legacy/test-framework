@@ -8,7 +8,7 @@
  * Contributors:
  *   Codenvy, S.A. - initial API and implementation
  *******************************************************************************/
-package com.codenvy.test.framework.concordion;
+package org.eclipse.che.test.framework.concordion;
 
 import org.concordion.api.Resource;
 import org.concordion.api.extension.ConcordionExtender;
@@ -21,17 +21,17 @@ public class CodenvyConcordionResourceExtension implements ConcordionExtension {
 
     @Override
     public void addTo(ConcordionExtender concordionExtender) {
-        concordionExtender.withLinkedJavaScript("/com/codenvy/test/framework/scripts/jquery-1.9.0.min.js",
+        concordionExtender.withLinkedJavaScript("/org/eclipse/che/test/framework/scripts/jquery-1.9.0.min.js",
                                                 new Resource("/scripts/jquery-1.9.0.min.js"));
-        concordionExtender.withLinkedJavaScript("/com/codenvy/test/framework/scripts/Markdown.ClassConvert.js",
+        concordionExtender.withLinkedJavaScript("/org/eclipse/che/test/framework/scripts/Markdown.ClassConvert.js",
                                                 new Resource("/scripts/Markdown.ClassConvert.js"));
-        concordionExtender.withLinkedJavaScript("/com/codenvy/test/framework/scripts/Markdown.Converter.js",
+        concordionExtender.withLinkedJavaScript("/org/eclipse/che/test/framework/scripts/Markdown.Converter.js",
                                                 new Resource("/scripts/Markdown.Converter.js"));
 
         // bootstrap
-        concordionExtender.withLinkedJavaScript("/com/codenvy/test/framework/bootstrap/js/bootstrap.min.js",
+        concordionExtender.withLinkedJavaScript("/org/eclipse/che/test/framework/bootstrap/js/bootstrap.min.js",
                                                 new Resource("/bootstrap/js/bootstrap.min.js"));
-        concordionExtender.withLinkedCSS("/com/codenvy/test/framework/bootstrap/css/bootstrap.min.css",
+        concordionExtender.withLinkedCSS("/org/eclipse/che/test/framework/bootstrap/css/bootstrap.min.css",
                                          new Resource("/bootstrap/css/bootstrap.min.css"));
 
         // adding the link to the log files if any

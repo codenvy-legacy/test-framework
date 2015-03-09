@@ -8,11 +8,11 @@
  * Contributors:
  *   Codenvy, S.A. - initial API and implementation
  *******************************************************************************/
-package com.codenvy.test.framework.itests;
+package org.eclipse.che.test.framework.itests;
 
 
-import com.codenvy.test.framework.AbstractIntegrationTest;
-import com.codenvy.test.framework.selenium.pages.IDEMainPage;
+import org.eclipse.che.test.framework.AbstractIntegrationTest;
+import org.eclipse.che.test.framework.selenium.pages.IDEMainPage;
 
 import org.openqa.selenium.support.PageFactory;
 
